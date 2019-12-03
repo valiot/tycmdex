@@ -7,7 +7,13 @@ defmodule Tycmdex.MixProject do
       version: "0.1.0",
       elixir: "~> 1.9",
       name: "Tycmdex",
+      description: description(),
+      package: package(),
+      source_url: "https://github.com/valiot/tycmdex",
       start_permanent: Mix.env() == :prod,
+      compilers: [:cmake] ++ Mix.compilers(),
+      docs: [extras: ["README.md"], main: "readme"],
+      build_embedded: true,
       deps: deps()
     ]
   end
@@ -19,9 +25,34 @@ defmodule Tycmdex.MixProject do
     ]
   end
 
+  defp description() do
+    "Elixir wrapper for tycmd (tytools), for programming Teensy boards."
+  end
+
+  defp package() do
+    [
+      files: [
+        "lib",
+        "src/tytools",
+        "CMakeLists.txt",
+        "test",
+        "mix.exs",
+        "README.md",
+        "LICENSE"
+      ],
+      maintainers: ["valiot"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/valiot/abex"}
+    ]
+  end
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:elixir_cmake, github: "valiot/elixir-cmake"},
+      #{:elixir_cmake, "~> 0.1.0"},
+      {:ex_doc, "~> 0.19", only: :dev},
+      {:muontrap, "~> 0.5.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
