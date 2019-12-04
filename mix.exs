@@ -33,7 +33,11 @@ defmodule Tycmdex.MixProject do
     [
       files: [
         "lib",
-        "src/tytools",
+        "src/tytools/src/libhs",
+        "src/tytools/src/libty",
+        "src/tytools/src/tycmd",
+        "src/tytools/cmake",
+        "src/tytools/tests",
         "CMakeLists.txt",
         "test",
         "mix.exs",
@@ -52,6 +56,7 @@ defmodule Tycmdex.MixProject do
       {:elixir_cmake, github: "valiot/elixir-cmake"},
       #{:elixir_cmake, "~> 0.1.0"},
       {:ex_doc, "~> 0.19", only: :dev},
+      {:jason, "~> 1.1"},
       {:muontrap, "~> 0.5.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}

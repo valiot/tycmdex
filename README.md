@@ -1,6 +1,6 @@
 # Tycmdex
 
-**TODO: Add description**
+Elixir wrapper of tycmd (tytools), for programming Teensy boards.
 
 ## Installation
 
@@ -11,6 +11,8 @@ by adding `tycmdex` to your list of dependencies in `mix.exs`:
 def deps do
   [
     {:tycmdex, "~> 0.1.0"}
+    # the current elixir-cmake hex package (0.1.0) is not compatible.
+    {:elixir_cmake, github: "valiot/elixir-cmake", override: true}
   ]
 end
 ```
