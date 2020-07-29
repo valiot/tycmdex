@@ -53,7 +53,7 @@ defmodule Tycmdex.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:elixir_cmake, github: "valiot/elixir-cmake"},
+      {:elixir_cmake, github: "valiot/elixir-cmake", branch: "multi-projects"},
       #{:elixir_cmake, "~> 0.1.0"},
       {:ex_doc, "~> 0.19", only: :dev},
       {:jason, "~> 1.1"},
